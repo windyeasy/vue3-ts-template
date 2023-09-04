@@ -6,7 +6,7 @@ import store from '@/store'
 
 import 'normalize.css'
 import '@/assets/css/index.scss'
-
+console.log(import.meta.env)
 const app = createApp(App)
 app.use(router)
 app.use(store)
