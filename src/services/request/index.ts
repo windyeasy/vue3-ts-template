@@ -42,19 +42,29 @@ class Request {
     if (config?.interceptors?.requestSuccessFn) {
       config = config.interceptors.requestSuccessFn(config)
     }
-    return new Promise<T>((resove, reject) => {
+    return new Promise<T>((resolve, reject) => {
       this.instance
         .request<any, T>(config)
         .then((res) => {
           if (config?.interceptors?.responseSuccessFn) {
             res = config?.interceptors?.responseSuccessFn(res)
           }
-          resove(res)
+          resolve(res)
         })
         .catch((err) => reject(err))
     })
   }
-  get() {}
-  post() {}
+  get<T = any>(config: RequestConfig<T>) {
+    return this.request<T>({ ...config, method: 'GET' })
+  }
+  post<T = any>(config: RequestConfig<T>) {
+    return this.request<T>({ ...config, method: 'POST' })
+  }
+  delete<T = any>(config: RequestConfig<T>) {
+    return this.request<T>({ ...config, method: 'DELETE' })
+  }
+  patch<T = any>(config: RequestConfig<T>) {
+    return this.request<T>({ ...config, method: 'PATCH' })
+  }
 }
 export default Request
