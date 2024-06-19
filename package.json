@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "stylelint": "stylelint .",
+    "stylelint:fix": "stylelint . --fix",
     "test": "vitest",
     "prepare": "husky",
     "commit": "cz"
