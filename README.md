@@ -43,4 +43,4 @@ git commit -m "feat: 添加一个新特性"
 
 ## License
 
-vue3-ts-template is MIT.
+vue3-ts-template is [MIT](./LICENSE).
