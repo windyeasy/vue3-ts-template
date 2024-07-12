@@ -8,6 +8,7 @@ const test = ref('test auto import')
       home
       {{ test }}
       <hello-world />
+      <button class="i-carbon-sun" />
     </div>
   </div>
 </template>
