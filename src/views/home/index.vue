@@ -1,32 +1,20 @@
 <script lang="ts" setup>
-import { useLocalStorage } from '@vueuse/core'
 
-const test = ref('test auto import')
-const store = useLocalStorage('my-storage', {
-  name: 'Apple',
-  color: 'red',
-})
-setTimeout(() => {
-  store.value.color = 'blue'
-}, 1500)
 </script>
 
 <template>
-  <div class="home">
-    <div class="header m-1 text-3xl">
-      home
-      {{ test }}
-      <hello-world />
-      <button class="i-carbon-sun" />
-    </div>
+  <div id="home">
+    <header class="text-center text-3xl mt20">
+      Vue3+ts template
+    </header>
+    <main class="mt20 flex justify-center items-center flex-col">
+      <img class="logo" src="/vite.svg" alt="logo">
+      <p class="text-lg">
+        The project is designed to fast develop a website.
+      </p>
+    </main>
+    <footer class="text-center mt10">
+      author: <a class="text-gray-700 no-underline hover:underline" href="https://github.com/windyeasy" target="_blank">windyeasy</a>
+    </footer>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.home {
-  background-color: red;
-  .header {
-    color: yellow;
-  }
-}
-</style>
