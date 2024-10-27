@@ -1,6 +1,6 @@
-import axios from 'axios'
 import type { AxiosInstance } from 'axios'
 import type { RequestConfig, RequestConstructorConfig } from './type'
+import axios from 'axios'
 
 class Request {
   instance: AxiosInstance
